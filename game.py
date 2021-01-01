@@ -1,4 +1,4 @@
-from player import HumanPlayer, RandomComputerPlayer
+from player import HumanPlayer, HumanPlayer2, RandomComputerPlayer
 class TicTacToe:
     def __init__(self):
         self.board = [' ' for _ in range(9)]
@@ -64,7 +64,7 @@ def play(game, x_player, o_player, print_game=True):
         
         if game.make_move(square, letter):
             if print_game:
-                print(letter + f'makes a move to square {square}')
+                print(letter + f' makes a move to square {square}')
                 game.print_board()
                 print('')
 
@@ -78,6 +78,6 @@ def play(game, x_player, o_player, print_game=True):
 
 if __name__ == '__main__':
     x_player = HumanPlayer('X')
-    o_player = RandomComputerPlayer('O')
+    o_player = HumanPlayer2('O')
     t = TicTacToe()
     play(t, x_player, o_player, print_game=True)
